@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "556733112233",
+    "project_id": "planar-spring-332122",
+    "storage_bucket": "planar-spring-332122.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556733112233:android:6c6f24083bcd754344eeb8",
+        "android_client_info": {
+          "package_name": "com.example.public_chat_app_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556733112233-9ng2ft4rg9abavdmu6fpbndbqir0nrak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvI0YdBb4MoKYgnW3HsQFJ-BeHF4koen4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556733112233-9ng2ft4rg9abavdmu6fpbndbqir0nrak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
