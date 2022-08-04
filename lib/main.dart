@@ -1,14 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:public_chat_app_flutter/pages/chat_room_page.dart';
 import 'package:public_chat_app_flutter/pages/launcher_page.dart';
 import 'package:public_chat_app_flutter/pages/login_page.dart';
 import 'package:public_chat_app_flutter/pages/user_profile_page.dart';
+import 'package:public_chat_app_flutter/providers/user_provider.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase. initializeApp();
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => UserProvider()),
+    ],
+      child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
