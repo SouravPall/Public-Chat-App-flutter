@@ -14,6 +14,16 @@ class ChatRoomPage extends StatefulWidget {
 class _ChatRoomPageState extends State<ChatRoomPage> {
   final msgController = TextEditingController();
 
+  bool isInit = true;
+  @override
+  void didChangeDependencies() {
+    if(isInit) {
+      Provider.of<ChatRoomProvider>(context, listen: false).getAllChatRoomMessages();
+      isInit = false;
+    }
+    super.didChangeDependencies();
+  }
+
   @override
   void dispose() {
    msgController.dispose();
@@ -28,6 +38,7 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
           children: [
             Expanded(
               child: ListView.builder(
+                reverse: true,
                   itemCount: provider.msgList.length,
                 itemBuilder: (context, index){
                     final msg = provider.msgList[index];
