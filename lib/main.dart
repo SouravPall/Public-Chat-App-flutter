@@ -5,6 +5,7 @@ import 'package:public_chat_app_flutter/pages/chat_room_page.dart';
 import 'package:public_chat_app_flutter/pages/launcher_page.dart';
 import 'package:public_chat_app_flutter/pages/login_page.dart';
 import 'package:public_chat_app_flutter/pages/user_profile_page.dart';
+import 'package:public_chat_app_flutter/providers/chat_room_provider.dart';
 import 'package:public_chat_app_flutter/providers/user_provider.dart';
 
 void main() async{
@@ -13,6 +14,7 @@ void main() async{
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => UserProvider()),
+      ChangeNotifierProvider(create: (_) => ChatRoomProvider()),
     ],
       child: const MyApp(),
   ));

@@ -71,8 +71,9 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         trailing: IconButton(
                           icon:  const Icon(Icons.edit),
                           onPressed: () {
-                            showInputDialog('Display Name', userModel.name, (value) {
-                              provider.updateProfile(AuthService.user!.uid, {'name' : value});
+                            showInputDialog('Display Name', userModel.name, (value) async {
+                              await provider.updateProfile(AuthService.user!.uid, {'name' : value});
+                              await AuthService.updateDisplayName(value);
                             });
                           },
                         ),
@@ -114,6 +115,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
         await Provider
             .of<UserProvider>(context, listen: false).updateProfile(AuthService.user!.uid,
             {'image' : downloadUrl});
+        await AuthService.updateDisplayImage(downloadUrl);
 
       } catch(e) {
         rethrow;

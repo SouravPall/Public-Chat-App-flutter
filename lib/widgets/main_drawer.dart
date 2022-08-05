@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:public_chat_app_flutter/auth/auth_service.dart';
+import 'package:public_chat_app_flutter/pages/chat_room_page.dart';
 import 'package:public_chat_app_flutter/pages/launcher_page.dart';
 import 'package:public_chat_app_flutter/pages/login_page.dart';
 
@@ -14,6 +15,13 @@ class MainDrawer extends StatelessWidget {
           Container(
             height: 200,
             color: Colors.greenAccent,
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, ChatRoomPage.routeName);
+            },
+            leading: const Icon(Icons.chat),
+            title: const Text('Chat Room'),
           ),
           ListTile(
             onTap: () async{

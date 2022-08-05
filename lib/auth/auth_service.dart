@@ -18,11 +18,13 @@ class AuthService{
 
   static Future<void> logout() => _auth.signOut();
 
-  static bool isEmailverified() => _auth.currentUser!.emailVerified;
+  static bool isEmailVerified() => _auth.currentUser!.emailVerified;
 
   static Future<void> sendVerificationMail() => _auth.currentUser!.sendEmailVerification();
 
   static Future<void> updateDisplayName(String name) => _auth.currentUser!.updateDisplayName(name);
+
+  static Future<void> updateDisplayImage(String image) => _auth.currentUser!.updatePhotoURL(image);
 
   static Future<void> updatePhoneNumber(String phone) async {
     await FirebaseAuth.instance.verifyPhoneNumber(
